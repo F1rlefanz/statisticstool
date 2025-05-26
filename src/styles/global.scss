@@ -25,14 +25,14 @@ body {
   &.full-width {
     max-width: $container-max-width;
     
-    // Ausnahme für Tabellen-Container
-    .table-container {
-      max-width: none;
-      margin-left: -$spacing-xl;
-      margin-right: -$spacing-xl;
-      padding-left: $spacing-xl;
-      padding-right: $spacing-xl;
-    }
+    // Tabellen bekommen volle Breite
+// Tabellen bekommen volle verfügbare Breite
+.table-container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
   }
   
   &.narrow {
