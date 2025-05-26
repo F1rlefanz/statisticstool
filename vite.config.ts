@@ -13,9 +13,24 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Diese Zeile ENTFERNEN oder auskommentieren:
-        // additionalData: `@use "@/styles/variables" as *; @use "@/styles/global" as *;`
+        // additionalData entfernt für bessere Performance
       },
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false, // Für Production
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          icons: ['lucide-react'],
+          charts: ['chart.js', 'react-chartjs-2']
+        }
+      }
+    }
+  },
+  base: './' // Relative Pfade für IIS
 })

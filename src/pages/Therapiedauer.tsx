@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import InvasiveBeatmung from './therapiedauer/InvasiveBeatmung'
 import NichtinvasiveBeatmung from './therapiedauer/NichtinvasiveBeatmung'
 import NasalerHighflow from './therapiedauer/NasalerHighflow'
