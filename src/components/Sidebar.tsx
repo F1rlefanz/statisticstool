@@ -17,6 +17,26 @@ const Sidebar = () => {
     return location.pathname.startsWith(path)
   }
 
+  const getMainSection = (): string => {
+    const path = location.pathname
+    if (path === '/') return 'Home'
+    
+    const section = path.split('/')[1]
+    
+    switch(section) {
+      case 'kiss-erfassung':
+        return 'KISS'
+      case 'therapiedauer':
+      case 'statistiken':
+      case 'graphen':
+        return 'Schweregrad'
+      case 'einstellungen':
+        return 'Einstellungen'
+      default:
+        return 'Navigation'
+    }
+  }
+
   return (
     <div className="sidebar-container">
       <button 
@@ -30,7 +50,7 @@ const Sidebar = () => {
       <div className={`sidebar ${!isExpanded ? 'collapsed' : ''}`}>
         {isExpanded && (
           <nav>
-            <h3>Navigation</h3>
+            <h3>{getMainSection()}</h3>
             <ul className="menu">
               <li className="menu-item">
                 <Link to="/" className={isActive('/') ? 'active' : ''}>
@@ -87,50 +107,50 @@ const Sidebar = () => {
                     )}
                   </li>
 
-<li>
-  <Link to="/statistiken" className={isActive('/statistiken') ? 'active' : ''}>
-    Statistiken
-  </Link>
-  {isActive('/statistiken') && (
-    <ul className="nested-menu">
-      <li className="submenu-section">
-        <div className="subsection-title">Therapien</div>
-        <ul className="nested-submenu">
-          <li>
-            <Link to="/statistiken/beatmung">
-              Beatmung
-            </Link>
-          </li>
-          <li>
-            <Link to="/statistiken/nierenersatz">
-              Nierenersatz (CRRT)
-            </Link>
-          </li>
-          <li>
-            <Link to="/statistiken/herzunterstuetzung">
-              Herzunterstützung (VAD)
-            </Link>
-          </li>
-        </ul>
-      </li>
-      <li className="submenu-section">
-        <div className="subsection-title">Schweregradstatistiken</div>
-        <ul className="nested-submenu">
-          <li>
-            <Link to="/statistiken/intensiv">
-              Intensiv (ICU)
-            </Link>
-          </li>
-          <li>
-            <Link to="/statistiken/intensivueberwachung">
-              Intensivüberwachung (IMC)
-            </Link>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  )}
-</li>
+                  <li>
+                    <Link to="/statistiken" className={isActive('/statistiken') ? 'active' : ''}>
+                      Statistiken
+                    </Link>
+                    {isActive('/statistiken') && (
+                      <ul className="nested-menu">
+                        <li className="submenu-section">
+                          <div className="subsection-title">Therapien</div>
+                          <ul className="nested-submenu">
+                            <li>
+                              <Link to="/statistiken/beatmung">
+                                Beatmung
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/statistiken/nierenersatz">
+                                Nierenersatz (CRRT)
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/statistiken/herzunterstuetzung">
+                                Herzunterstützung (VAD)
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className="submenu-section">
+                          <div className="subsection-title">Schweregradstatistiken</div>
+                          <ul className="nested-submenu">
+                            <li>
+                              <Link to="/statistiken/intensiv">
+                                Intensiv (ICU)
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/statistiken/intensivueberwachung">
+                                Intensivüberwachung (IMC)
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
 
                   <li>
                     <Link to="/graphen" className={isActive('/graphen') ? 'active' : ''}>

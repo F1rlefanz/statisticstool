@@ -66,6 +66,45 @@
   margin: $spacing-xs 0;
 }
 
+.menu-section {
+  margin: $spacing-base 0;
+}
+
+.section-title {
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  margin: $spacing-xs 0;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: $spacing-xs;
+  margin: $spacing-xs 0;
+}
+
+.submenu-section {
+  margin: $spacing-sm 0;
+}
+
+.subsection-title {
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  margin: $spacing-xs 0;
+}
+
+.nested-menu {
+  list-style: none;
+  padding-left: $spacing-base;
+  margin: $spacing-xs 0;
+}
+
+.nested-submenu {
+  list-style: none;
+  padding-left: $spacing-sm;
+  margin: $spacing-xs 0;
+}
+
 .sidebar a {
   text-decoration: none;
   color: $text-secondary;
