@@ -7,7 +7,6 @@ import Therapiedauer from './pages/Therapiedauer'
 import Statistiken from './pages/Statistiken'
 import Graphen from './pages/Graphen'
 import Einstellungen from './pages/Einstellungen'
-import InvasiveBeatmung from './pages/therapiedauer/InvasiveBeatmung'
 import './components/Breadcrumb.scss'
 import './components/Sidebar.scss'
 import './App.css'
@@ -26,7 +25,6 @@ function App() {
             <Route path="/statistiken/*" element={<Statistiken />} />
             <Route path="/graphen" element={<Graphen />} />
             <Route path="/einstellungen" element={<Einstellungen />} />
-            <Route path="/test-invasive-beatmung" element={<InvasiveBeatmung />} />
           </Routes>
         </main>
       </div>
