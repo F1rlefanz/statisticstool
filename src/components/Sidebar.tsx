@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
 
 const Sidebar = () => {
@@ -33,16 +33,79 @@ const Sidebar = () => {
             <h3>Navigation</h3>
             <ul className="menu">
               <li className="menu-item">
-                <a href="/" className={isActive('/') ? 'active' : ''}>
+                <Link to="/" className={isActive('/') ? 'active' : ''}>
                   Home
-                </a>
+                </Link>
               </li>
+
               <li className="menu-item">
-                <a href="/kiss-erfassung" className={isActive('/kiss-erfassung') ? 'active' : ''}>
+                <Link to="/kiss-erfassung" className={isActive('/kiss-erfassung') ? 'active' : ''}>
                   KISS
-                </a>
+                </Link>
               </li>
-              {/* Weitere Navigation wird in den nächsten Schritten hinzugefügt */}
+
+              <li className="menu-section">
+                <div className="section-title">Schweregrad</div>
+                <ul className="submenu">
+                  <li>
+                    <Link to="/therapiedauer" className={isActive('/therapiedauer') ? 'active' : ''}>
+                      Erfassung der Therapiedauer
+                    </Link>
+                    {isActive('/therapiedauer') && (
+                      <ul className="nested-menu">
+                        <li className="submenu-section">
+                          <div className="subsection-title">Beatmung</div>
+                          <ul className="nested-submenu">
+                            <li>
+                              <Link to="/therapiedauer/invasive-beatmung">
+                                Invasive Beatmung
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/therapiedauer/nichtinvasive-beatmung">
+                                Nichtinvasive Beatmung
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/therapiedauer/nasaler-highflow">
+                                Nasaler Highflow
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <Link to="/therapiedauer/nierenersatz">
+                            Nierenersatz (CRRT)
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/therapiedauer/herzunterstuetzung">
+                            Herzunterstützung
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li>
+                    <Link to="/statistiken" className={isActive('/statistiken') ? 'active' : ''}>
+                      Statistiken
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="/graphen" className={isActive('/graphen') ? 'active' : ''}>
+                      Graphen
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="menu-item">
+                <Link to="/einstellungen" className={isActive('/einstellungen') ? 'active' : ''}>
+                  Einstellungen
+                </Link>
+              </li>
             </ul>
           </nav>
         )}
