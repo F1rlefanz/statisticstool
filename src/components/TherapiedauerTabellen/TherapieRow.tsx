@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import HourCell from './components/HourCell'
-import { TOTAL_HOURS, TherapieRow as TherapieRowType } from './types'
+import { TOTAL_HOURS, type TherapieRow as TherapieRowType } from './types'
 import './components/HourCell.scss'
 
 interface TherapieRowProps {

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import TherapieRow from './TherapieRow'
 import TherapieSummary from './TherapieSummary'
 import { 
-  TherapieRow as TherapieRowType, 
+  type TherapieRow as TherapieRowType, 
   createEmptyTherapieRow, 
   isValidTherapieRow,
   DEFAULT_HEADERS 
 } from './types'
-import './TherapieSummary.scss'
+
 
 interface ErrorState {
   message: string;
