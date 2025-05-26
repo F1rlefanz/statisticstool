@@ -1,0 +1,42 @@
+@use '../styles/variables' as *;
+
+.breadcrumb {
+  padding: $spacing-base;
+  background-color: $background-white;
+  border-bottom: 1px solid $border-color;
+
+  ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  .separator {
+    margin: 0 $spacing-xs;
+    color: $text-secondary;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: color $transition-standard;
+
+    &:hover {
+      color: make-darker($primary-color, 10);
+      text-decoration: underline;
+    }
+  }
+
+  span:last-child {
+    color: $text-secondary;
+    font-weight: $font-weight-medium;
+  }
+}

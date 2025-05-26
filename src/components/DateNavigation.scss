@@ -1,0 +1,73 @@
+@use '../styles/variables' as *;
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: $spacing-xs;
+  position: relative;
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $text-secondary;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+
+  .date-input-container {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  .date-input {
+    width: 100%;
+    padding: $spacing-xs;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+  }
+
+  .calendar-toggle-button {
+    position: absolute;
+    right: $spacing-xs;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $text-secondary;
+    padding: 0;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+
+  .calendar-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: $spacing-xs;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    background: $background-white;
+  }
+
+  .today-button,
+  .vortaguebernahme-button {
+    color: $primary-color;
+
+    &:hover {
+      color: make-darker($primary-color, 10);
+    }
+  }
+}

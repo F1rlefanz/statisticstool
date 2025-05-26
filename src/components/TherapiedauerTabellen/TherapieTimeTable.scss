@@ -1,0 +1,107 @@
+@use '../../styles/variables' as *;
+
+.therapie-time-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.therapie-time-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  margin-top: $spacing-md;
+
+  th {
+    background-color: $background-light;
+    border: 1px solid $border-color;
+    padding: 0.25rem;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    
+    &.hour-header {
+      width: 40px;
+    }
+  }
+
+  td {
+    border: 1px solid $border-color;
+    padding: 0;
+    text-align: center;
+  }
+
+  .input-field {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    background: transparent;
+    padding: $spacing-xs;
+    
+    &:focus {
+      outline: none;
+      background-color: $background-light;
+    }
+  }
+
+  .delete-btn {
+    background-color: transparent;
+    color: $text-secondary;
+    border: 1px solid $border-color;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all $transition-speed;
+    margin: 0 auto;
+    display: block;
+    
+    &:hover {
+      background-color: $background-light;
+      color: $text-primary;
+    }
+    
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
+
+  .total-cell {
+    padding: $spacing-xs;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.add-row-container {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-lg;
+}
+
+.add-row-btn {
+  background-color: $primary-color;
+  color: $background-white;
+  border: none;
+  padding: $spacing-xs $spacing-base;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color $transition-speed;
+
+  &:hover {
+    background-color: make-darker($primary-color, 10);
+  }
+}
+
+.error-alert {
+  margin-top: $spacing-lg;
+  padding: $spacing-xs;
+  border-radius: $border-radius;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  
+  &.error-alert--warning {
+    background-color: #fef3c7;
+    border: 1px solid #f59e0b;
+    color: #92400e;
+  }
+}

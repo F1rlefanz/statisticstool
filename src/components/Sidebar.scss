@@ -1,0 +1,85 @@
+@use '../styles/variables' as *;
+
+.sidebar-container {
+  position: relative;
+  height: 100vh;
+}
+
+.toggle-button {
+  position: absolute;
+  right: -12px;
+  top: $spacing-lg;
+  width: 24px;
+  height: 24px;
+  background-color: $background-white;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform $transition-standard;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    background-color: $background-light;
+  }
+
+  &.sidebar-collapsed {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar {
+  width: $sidebar-width;
+  background-color: $sidebar-bg;
+  padding: $spacing-base;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  transition: width $transition-standard,
+              padding $transition-standard;
+
+  &.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  h3 {
+    margin-bottom: $spacing-base;
+    color: $text-primary;
+    text-transform: capitalize;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin: $spacing-xs 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: $text-secondary;
+  display: block;
+  padding: $spacing-xs;
+  border-radius: $border-radius;
+  transition: background-color $transition-standard;
+
+  &:hover {
+    background-color: $sidebar-hover;
+  }
+
+  &.active {
+    background-color: $sidebar-active;
+    color: $background-white;
+  }
+}
