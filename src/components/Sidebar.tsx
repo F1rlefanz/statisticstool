@@ -87,11 +87,50 @@ const Sidebar = () => {
                     )}
                   </li>
 
-                  <li>
-                    <Link to="/statistiken" className={isActive('/statistiken') ? 'active' : ''}>
-                      Statistiken
-                    </Link>
-                  </li>
+<li>
+  <Link to="/statistiken" className={isActive('/statistiken') ? 'active' : ''}>
+    Statistiken
+  </Link>
+  {isActive('/statistiken') && (
+    <ul className="nested-menu">
+      <li className="submenu-section">
+        <div className="subsection-title">Therapien</div>
+        <ul className="nested-submenu">
+          <li>
+            <Link to="/statistiken/beatmung">
+              Beatmung
+            </Link>
+          </li>
+          <li>
+            <Link to="/statistiken/nierenersatz">
+              Nierenersatz (CRRT)
+            </Link>
+          </li>
+          <li>
+            <Link to="/statistiken/herzunterstuetzung">
+              Herzunterstützung (VAD)
+            </Link>
+          </li>
+        </ul>
+      </li>
+      <li className="submenu-section">
+        <div className="subsection-title">Schweregradstatistiken</div>
+        <ul className="nested-submenu">
+          <li>
+            <Link to="/statistiken/intensiv">
+              Intensiv (ICU)
+            </Link>
+          </li>
+          <li>
+            <Link to="/statistiken/intensivueberwachung">
+              Intensivüberwachung (IMC)
+            </Link>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  )}
+</li>
 
                   <li>
                     <Link to="/graphen" className={isActive('/graphen') ? 'active' : ''}>
