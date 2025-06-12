@@ -1,3 +1,31 @@
-@use "./styles/variables" as *;
-@use "./styles/global" as *;
 @import "tailwindcss";
+
+:root {
+  /* Ihre bestehenden Farben als Tailwind-Tokens */
+  --color-primary: #0074d9;
+  --color-text-primary: #333;
+  --color-text-secondary: #666;
+  --color-background-light: #f4f4f4;
+  --color-border: #e0e0e0;
+  
+  /* Sidebar-spezifische Farben */
+  --color-sidebar-bg: #f4f4f4;
+  --color-sidebar-hover: #e0e0e0;
+  
+  /* Error/Success Farben */
+  --color-error-bg: #fee2e2;
+  --color-error-border: #fca5a5;
+  --color-error-text: #991b1b;
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #f59e0b;
+  --color-warning-text: #92400e;
+}
+
+/* Minimale Custom CSS - nur für sehr spezielle Fälle */
+.therapie-time-table {
+  border-collapse: collapse;
+}
+
+.hour-checkbox[data-selected="true"] {
+  background-color: var(--color-primary);
+}
